@@ -5,16 +5,11 @@ const content = document.getElementById("result");
 const main = document.getElementsByTagName("main")[0];
 let listening = false;
 
-const greetings = ['Hello Sir',
-                   'I am fine  Sir',
-                    'There are burning news, i am fine, thanks for checking on me'];
+const greetings = ['Hello Sir, I am fine  Sir', 'There are burning news, i am fine, thanks for checking on me'];
 
-const updates = ['There are no updates',
-                 'You friend just texted you hi',
-                  'i don\'t know what to tell you, there is just a lot'];
+const updates = ['There are no updates', 'You friend just texted you hi', 'i don\'t know what to tell you, there is just a lot'];
 
-const modifications = ['i don\'t understand what you said becouse you have not programed me to say that yet.',
-                         'you are currently working on adding the specs of opening the browser through voice comand'];
+const modifications = ['i don\'t understand what you said becouse you have not programed me to say that yet.', 'you are currentl y working on adding the specs of opening the browser through voice comand'];
 
 //declaring speech recognition 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -59,13 +54,13 @@ function readOutRoud(message) {
     speech.text = finalText;
   }
 
-  if(message.includes('how are you')) {
+  if(message.includes('hello gedion')) {
     sayThis(greetings);
   }else if(message.includes('updates')) {
     sayThis(updates);
-  }else if(message.includes('modifications')) {
+  }else if(message.includes('my goal')) {
     sayThis(modifications);
-  }else if(message.includes('open YouTube')) {
+  }else if(message.includes('gedion open YouTube')) {
     const finalText = 'wait as i redirect you to the page';
     speech.text = finalText;
     window.open('https://www.youtube.com/?gl=KE&tab=w11', '_blank');
